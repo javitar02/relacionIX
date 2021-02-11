@@ -1,5 +1,5 @@
-import banco.CuentaCredito;
-import banco.CuentaException;
+import EJ1.CuentaCredito;
+import EJ1.CuentaException;
 
 public class Principal {
 

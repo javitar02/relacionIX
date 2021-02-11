@@ -1,4 +1,4 @@
-package banco;
+package EJ1;
 
 /**
  Realizar un programa que permita gestionar el saldo de una cuenta corriente. Una

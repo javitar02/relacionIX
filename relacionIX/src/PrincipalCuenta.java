@@ -1,6 +1,9 @@
-package banco;
 
-public class Principal {
+
+import EJ1.CuentaCredito;
+import EJ1.CuentaException;
+
+public class PrincipalCuenta {
 
 	public static void main(String[] args) {
 		try {

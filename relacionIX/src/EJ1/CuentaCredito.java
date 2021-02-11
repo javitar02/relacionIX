@@ -1,4 +1,4 @@
-package banco;
+package EJ1;
 public class CuentaCredito extends Cuenta {
 	
 	//Atributos
