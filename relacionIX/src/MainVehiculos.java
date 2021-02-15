@@ -1,6 +1,5 @@
-package EJ2;
 
-public class PrincipalEmpleado {
+public class MainVehiculos {
 
 	public static void main(String[] args) {
 		
