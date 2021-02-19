@@ -1,14 +1,23 @@
 package ej3;
 
+
 public abstract class Vehiculo {
 	
-	public static final int PRECIO_GAMA_BAJA = 30;
-	public static final int PRECIO_GAMA_MEDIA = 40;
-	public static final int PRECIO_GAMA_ALTA = 50;
-
-	private String matricula;
+	private String matricula; 
 	private TipoGama gama;
+	
+	public static final double PRECIO_ALTA = 50;
+	public static final double PRECIO_MEDIA = 40;
+	public static final double PRECIO_BAJA = 30;
 
+	public Vehiculo(String matricula, TipoGama gama)  {
+		this.matricula = matricula;
+		this.gama=gama;
+
+	}
+
+	// M�todos gets y sets
+	
 	public String getMatricula() {
 		return matricula;
 	}
@@ -23,16 +32,24 @@ public abstract class Vehiculo {
 
 	public void setGama(TipoGama gama) {
 		this.gama = gama;
+	}	
+
+	// m�todos alquiler
+	public abstract double calcularAlquiler(int dias) throws VehiculoException;
+
+	// M�todos calcular base	
+
+	protected double calcularAlquilerBase(int dias) {
+		double precio ;
+		
+		precio=dias* gama.getPrecioBasePorGama();
+		return precio;
+
 	}
 
 	@Override
 	public String toString() {
-		return "Vehiculo [matricula=" + matricula + ", gama=" + gama + "]";
+		return " Matricula=" + matricula + ", gama=" + gama + "]";
 	}
 
-	public double calcularPrecioAlquiler(int dias) {
-		double alquiler = PRECIO_GAMA_BAJA;
-
-		return alquiler;
-	}
 }

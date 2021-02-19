@@ -13,7 +13,7 @@ public class Empleado {
 			this.nombre = nombre;
 			setSueldo(sueldo);
 		}
-		public void setSueldo(int sueldo) {
+		public void setSueldo(int sueldo) throws EmpleadoException {
 			if(sueldo<SUELDO_MINIMO) {
 				System.out.println("Saldo incorrecto "+sueldo);
 			}

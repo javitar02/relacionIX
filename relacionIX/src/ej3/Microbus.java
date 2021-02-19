@@ -1,8 +1,45 @@
 package ej3;
 
-public class Microbus {
-	public static final int PRECIO_POR_PLAZA = 5;
+public class Microbus extends Vehiculo {
+	private int numPlazas;
+	private final double CANTIDADXPLAZA=5;
 	
+	public Microbus(String matricula, TipoGama gama, int numPlaza) throws VehiculoException {
+		super(matricula, gama);
+		this.setNumPlazas(numPlaza);		
+	}
 	
-	private int plazas;
+	//M�todos gets y sets
+	
+	public int getNumPlazas() {
+		return numPlazas;
+	}	
+	
+	public void setNumPlazas(int numPlazas)throws VehiculoException {
+		if(numPlazas<=0){
+			throw new VehiculoException("No puede haber un n�mero de plazas negativo o cero");
+		}
+		this.numPlazas = numPlazas;
+	}
+
+
+	//M�todo calcular el alquiler
+	public double calcularAlquiler(int dias) throws VehiculoException {
+		double total;		
+		if ( dias <=0)
+			throw new VehiculoException("Dias de alquiler incorrecto");
+		
+		
+		total=CANTIDADXPLAZA*numPlazas;
+		return total+ calcularAlquilerBase(dias);
+	}
+
+	@Override
+	public String toString() {
+		return "Microbus  " + super.toString() + " plazas =" + numPlazas;
+	}
+
+
+	
+
 }

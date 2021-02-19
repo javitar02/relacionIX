@@ -18,7 +18,6 @@ public class Directivo extends Empleado {
 	public void setSueldo(int sueldo) throws EmpleadoException {
 		if (sueldo < SUELDO_MINIMO)
 			throw new EmpleadoException(" Sueldo incorrecto");
-		super.s
 	}
 	
 	@Override
