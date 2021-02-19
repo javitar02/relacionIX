@@ -86,7 +86,7 @@ public abstract class  Personaje {
 			vidaActual=vidaMaxima;
 		
 		if(vidaActual==0) {
-			throw new PersonajeException("SHUT DOWN");
+			throw new PersonajeException("Has muerto");
 		}
 		this.vidaActual = vidaActual;
 	}

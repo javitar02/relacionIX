@@ -7,6 +7,7 @@ public class Mago extends Personaje{
 	private static final int LIMITE_HECHIZOS = 4;
 	private static final int INTELIGENCIA_MIN = 17;
 	private static final int FUERZA_MAX= 15;
+	private static final int DAÑO_PROVOCADO= 10;
 	
 	private String []almacenHechizos;
 	
@@ -37,7 +38,7 @@ public class Mago extends Personaje{
 		return numRealHechizos;
 	}
 	
-	public void lanzarHechizo(Personaje otro,String hechizos) {
+	public void lanzarHechizo(Personaje otro,String hechizos) throws PersonajeException {
 		int i;
 		int vida;
 		
@@ -46,8 +47,7 @@ public class Mago extends Personaje{
 				almacenHechizos[i]=null;
 			}
 		}
-		vida=otro.getVidaActual();
-		vida-=10;
+		otro.setVidaActual(DAÑO_PROVOCADO);
 	
 	}
 	
