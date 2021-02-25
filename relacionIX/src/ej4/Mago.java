@@ -38,7 +38,7 @@ public class Mago extends Personaje{
 		return numRealHechizos;
 	}
 	
-	public void lanzarHechizo(Personaje otro,String hechizos) throws PersonajeException {
+	public void lanzarHechizo(String hechizos,Personaje otro) throws PersonajeException {
 		int i;
 		int vida;
 		

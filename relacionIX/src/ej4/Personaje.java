@@ -1,12 +1,12 @@
 package ej4;
 
-public abstract class  Personaje {
+public abstract class Personaje implements Comparable<Personaje> {
 	
 	private String nombre;
 	private TRaza raza;
-	private int fuerza,inteligencia,vidaActual,vidaMaxima;
-	
-	private static final int VIDA_MAX=100,FUERZA_MAX=20,INTELIGENCIA_MAX=20;
+	private int fuerza,inteligencia,vidaMaxima;
+	public int vidaActual;
+	private final int VIDA_MAX=100,FUERZA_MAX=20,INTELIGENCIA_MAX=20;
 	
 	
 	public Personaje (String nombre,TRaza raza,int fuerza,int inteligencia,int vidaMaxima) throws PersonajeException{
@@ -40,6 +40,10 @@ public abstract class  Personaje {
 	public int getFuerza() {
 		return fuerza;
 	}
+	
+	public int getVidaActual() {
+		return vidaActual;
+	}
 
 	
 	/**
@@ -69,10 +73,6 @@ public abstract class  Personaje {
 		this.inteligencia = inteligencia;
 	}
 
-	public int getVidaActual() {
-		return vidaActual;
-	}
-
 	/**
 	 * Modifica la vida actual del personaje, contrololando que no supere la vida maxima
 	 * @param vidaActual
@@ -85,9 +85,6 @@ public abstract class  Personaje {
 		if ( vidaActual > vidaMaxima)  // si le entra un valor mayor a la vida maxima, le doy el valor maximo
 			vidaActual=vidaMaxima;
 		
-		if(vidaActual==0) {
-			throw new PersonajeException("Has muerto");
-		}
 		this.vidaActual = vidaActual;
 	}
 
@@ -107,13 +104,17 @@ public abstract class  Personaje {
 		this.vidaMaxima = vidaMaxima;
 	}
 	
+	@Override
+	public String toString() {
+		return "Nombre: " + nombre + " Raza: " + raza + " Fuerza: " + fuerza + " Inteligencia: "
+				+ inteligencia + " Vida Actual: " + vidaActual + " Vida máxima " + vidaMaxima + "]";
+	}
+	
 	public boolean equals(Personaje otro){
 		return this.nombre.equals(otro.nombre);
 	}
-	
-	@Override
-	public String toString() {
-		return "Nombre=" + nombre + ", raza=" + raza + ", fuerza=" + fuerza + ", inteligencia="
-				+ inteligencia + ", vidaActual=" + vidaActual + ", vidaMaxima=" + vidaMaxima + "]";
+	public int compareTo ( Personaje otro){
+		
+		return Integer.compare( otro.getVidaActual(), this.getVidaActual());
 	}
 }
