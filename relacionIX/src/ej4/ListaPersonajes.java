@@ -38,7 +38,7 @@ public class ListaPersonajes  {
 			throw new PersonajeException("Error, lista de personajes llena");
 		}
 
-		for (int i = 0; i < cantidadPersonajes; i++) {
+		for (int i = 0; i <cantidadPersonajes; i++) {
 			if (listaPersonajes[i].getNombre().equals(personajeIncorporado.getNombre())&&listaPersonajes[i]==null) {
 				throw new PersonajeException("Error, este personaje ya existe");
 			}
